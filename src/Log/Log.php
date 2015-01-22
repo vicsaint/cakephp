@@ -358,6 +358,7 @@ class Log
             $context = ['scope' => $context];
         }
         $context += ['scope' => []];
+        $context['scope'][] = '*';
 
         foreach (static::$_registry->loaded() as $streamName) {
             $logger = static::$_registry->{$streamName};
