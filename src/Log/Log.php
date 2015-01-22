@@ -370,7 +370,7 @@ class Log
             }
 
             $correctLevel = empty($levels) || in_array($level, $levels);
-            $inScope = array_intersect($context['scope'], $scopes);
+            $inScope = array_intersect($context['scope'], (array)$scopes);
 
             if ($correctLevel && $inScope) {
                 $logger->log($level, $message, $context);
